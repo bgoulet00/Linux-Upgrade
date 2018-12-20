@@ -8,3 +8,7 @@ bar.example.com
 one.example.com
 two.example.com
 three.example.com
+
+[ios_devices]
+
+r1 ansible_host=10.10.10.135
