@@ -7,17 +7,23 @@
     yum:
       name: "*"
       state: latest
-      
-  - name: restart system to reboot to newest kernel
+    notify:
+    - restart
+    - pause
+    - wait for reboot
+  
+  handlers:
+  
+  - name: restart
     shell: "sleep 5 && reboot"
     async: 1
     poll: 0
 
-  - name: wait for 10 seconds
+  - name: pause
     pause:
       seconds: 10
 
-  - name: wait for the system to reboot
+  - name: wait for reboot
     wait_for_connection:
       connect_timeout: 20
       sleep: 5
