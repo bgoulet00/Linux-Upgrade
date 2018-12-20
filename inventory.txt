@@ -1,4 +1,4 @@
-mail.example.com
+192.168.100.50
 
 [webservers]
 foo.example.com
